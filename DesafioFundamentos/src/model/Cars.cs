@@ -51,8 +51,6 @@ namespace DesafioFundamentos.src.model
        public override void VehicleRemove(){
                int vEnd,tempoUso,qtdHour;
                int achou = 0;
-                
-               Cars removeFourWheels = new Cars();
                string searchPlate,vP;
                DateTime dateTime = DateTime.Now;
                decimal precoInicial = 5.00m, precoTotal;
@@ -60,44 +58,52 @@ namespace DesafioFundamentos.src.model
                 searchPlate = Console.ReadLine();
                  foreach(Cars fourWheels in auto){
                     if(fourWheels.Vehicleplate == searchPlate){
-                         removeFourWheels.Vehicleplate = fourWheels.Vehicleplate;
-                         removeFourWheels.VehicleModel = fourWheels.VehicleModel;
-                         removeFourWheels.VehicleColor = fourWheels.VehicleColor;
-                         removeFourWheels.VehicleBegin = fourWheels.VehicleBegin;
                          achou = achou + 1; 
-                         break;
-                    }
-                    
-                }
-                     if(achou > 0){
-                                  
-                            Console.WriteLine($"Placa - {removeFourWheels.Vehicleplate} encontrada");
+                         if(achou > 0)
+                         {     
+                            Console.WriteLine($"Placa - {fourWheels.Vehicleplate} encontrada");
                             vEnd = dateTime.Hour;
                             Console.WriteLine($"Data/Hora Saida\n ->{dateTime} ");  
-                            qtdHour = vEnd -  removeFourWheels.VehicleBegin;
-                             if(qtdHour <= 1) 
-                                            {
+                            qtdHour = vEnd -  fourWheels.VehicleBegin;
+                             if(qtdHour <= 1){
                                                   tempoUso = dateTime.Minute;
-                                                  Console.WriteLine($"Tempo de Uso - {tempoUso}\n Saldo Devedor R$-{precoInicial}");
-                                                  Console.Write($"Carro - {removeFourWheels.VehicleModel} de Placa - {removeFourWheels.Vehicleplate}\n Foi removido!\n");
-                                                  auto.Remove(removeFourWheels);
+                                                   Console.Write("|==========**|IMRESSÃO DE TICKET|**===========|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=================|PAGMENTO|==================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|================|DIO DESAFIO|================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write($"|  Estacionamento {dateTime}         |\n"                               );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write($"| Tempo de Uso -> {tempoUso}                          |\n"              );
+                                                   Console.Write($"| Saldo Devedor R$-{precoInicial}                       |\n"            );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write($"| Carro -> {fourWheels.VehicleModel}                                |\n");
+                                                   Console.Write($"| Placa -> {fourWheels.Vehicleplate}                           |\n"     );
+                                                   Console.Write("| Removido com Sucesso !                      |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   auto.Remove(fourWheels);
                                                 
-                                            }
-                                            else
-                                                {  
+                                            }else{  
                                                    precoTotal = precoInicial*qtdHour;
                                                    Console.WriteLine($"Tempo de Uso - {qtdHour}\n Saldo Devedor R$-{precoTotal}");
-                                                   Console.Write($"Carro - {removeFourWheels.VehicleModel} de Placa - {removeFourWheels.Vehicleplate}\n Foi removido!\n");
-                                                   auto.Remove(removeFourWheels);
+                                                   Console.Write($"Carro - {fourWheels.VehicleModel} de Placa - {fourWheels.Vehicleplate}\n Foi removido!\n");
+                                                   auto.Remove(fourWheels);
                                                  }
-                     }else{
-
-                        Console.Write($"O carro de Placa:{searchPlate}\nNão foi cadastrado aqui!");
-                     }
-                        
-                      
-                    
-                 }                  
+                     
+                         }else{
+                                Console.Write($"O carro de Placa:{searchPlate}\nNão foi cadastrado aqui!");
+                             }
+                    }
+                }                          
+            }                  
               
             public void VehicleList()
             {
