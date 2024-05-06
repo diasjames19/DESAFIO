@@ -17,14 +17,16 @@ namespace DesafioFundamentos.src.model
             string VehicleModel,
             string Vehicleplate,  
             string VehicleColor,
-            int VehicleBegin
+            int VehicleBegin,
+            int vMinutos
             
         ):
          base(
                 VehicleModel,
                 Vehicleplate,
                 VehicleColor,
-                VehicleBegin
+                VehicleBegin,
+                vMinutos
          ){
                 
         }
@@ -42,6 +44,7 @@ namespace DesafioFundamentos.src.model
               Console.WriteLine("cor do Veiculo: ");
               fourWheels.VehicleColor = Console.ReadLine();
               fourWheels.VehicleBegin = dateTime.Hour;
+              fourWheels.vMinutos = dateTime.Minute;
               Console.Clear();
               auto.Add(fourWheels);
               Console.WriteLine($"Data-{dateTime}");
@@ -66,8 +69,11 @@ namespace DesafioFundamentos.src.model
                             Console.WriteLine($"Data/Hora Saida\n ->{dateTime} ");  
                             qtdHour = vEnd -  fourWheels.VehicleBegin;
                              if(qtdHour <= 1){
-                                                  tempoUso = dateTime.Minute;
-                                                   Console.Write("|==========**|IMRESSÃO DE TICKET|**===========|\n"                       );
+                                                  
+                                                  tempoUso = dateTime.Minute - fourWheels.vMinutos;
+                                                  if(tempoUso < 5){
+                                                    
+                                                   Console.Write("|=======***|TICKET DE SAIDA VEICULO|***=======|\n"                       );
                                                    Console.Write("|                                             |\n"                       );
                                                    Console.Write("|=================|PAGMENTO|==================|\n"                       );
                                                    Console.Write("|                                             |\n"                       );
@@ -81,7 +87,59 @@ namespace DesafioFundamentos.src.model
                                                    Console.Write("|                                             |\n"                       );
                                                    Console.Write("|                                             |\n"                       );
                                                    Console.Write("|=============================================|\n"                       );
-                                                   Console.Write($"| Tempo de Uso -> {tempoUso}                          |\n"              );
+                                                   Console.Write($"| Tempo de Uso -> {tempoUso}Min                     |\n"                );
+                                                   Console.Write($"| Saldo Devedor R$-{precoInicial}                       |\n"            );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write($"| Carro -> {fourWheels.VehicleModel}                                |\n");
+                                                   Console.Write($"| Placa -> {fourWheels.Vehicleplate}                           |\n"     );
+                                                   Console.Write("| Removido com Sucesso !                      |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   auto.Remove(fourWheels);
+                                                  }
+                                                  else if(tempoUso == 5 || tempoUso <= 30){
+                                                    decimal saldo = 1.25m;
+                                                    precoInicial = precoInicial + saldo;
+                                                   Console.Write("|=======***|TICKET DE SAIDA VEICULO|***=======|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=================|PAGMENTO|==================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|================|DIO DESAFIO|================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write($"|  Estacionamento {dateTime}         |\n"                               );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write($"| Tempo de Uso -> {tempoUso}Min                       |\n"              );
+                                                   Console.Write($"| Saldo Devedor R$-{precoInicial}                       |\n"            );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write($"| Carro -> {fourWheels.VehicleModel}                                |\n");
+                                                   Console.Write($"| Placa -> {fourWheels.Vehicleplate}                           |\n"     );
+                                                   Console.Write("| Removido com Sucesso !                      |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   auto.Remove(fourWheels);
+                                                  }else{
+                                                  precoInicial = precoInicial + 2.50m;
+                                                   Console.Write("|=======***|TICKET DE SAIDA VEICULO|***=======|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=================|PAGMENTO|==================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|================|DIO DESAFIO|================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write($"|  Estacionamento {dateTime}         |\n"                               );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write($"| Minutos de Uso -> {tempoUso}                        |\n"              );
                                                    Console.Write($"| Saldo Devedor R$-{precoInicial}                       |\n"            );
                                                    Console.Write("|=============================================|\n"                       );
                                                    Console.Write("|=============================================|\n"                       );
@@ -91,10 +149,35 @@ namespace DesafioFundamentos.src.model
                                                    Console.Write("|=============================================|\n"                       );
                                                    auto.Remove(fourWheels);
                                                 
+
+                                                  }
+                                                  
                                             }else{  
+                                                  tempoUso = dateTime.Hour - fourWheels.VehicleBegin;
+                                                   
                                                    precoTotal = precoInicial*qtdHour;
-                                                   Console.WriteLine($"Tempo de Uso - {qtdHour}\n Saldo Devedor R$-{precoTotal}");
-                                                   Console.Write($"Carro - {fourWheels.VehicleModel} de Placa - {fourWheels.Vehicleplate}\n Foi removido!\n");
+                                                   Console.Write("|=======***|TICKET DE SAIDA VEICULO|***=======|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=================|PAGMENTO|==================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|================|DIO DESAFIO|================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write($"|  Estacionamento {dateTime}         |\n"                               );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|                                             |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write($"| Horas de Uso -> {tempoUso}                          |\n"              );
+                                                   Console.Write($"| Saldo Devedor R$-{precoInicial}                       |\n"            );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
+                                                   Console.Write($"| Carro -> {fourWheels.VehicleModel}                                |\n");
+                                                   Console.Write($"| Placa -> {fourWheels.Vehicleplate}                           |\n"     );
+                                                   Console.Write("| Removido com Sucesso !                      |\n"                       );
+                                                   Console.Write("|=============================================|\n"                       );
                                                    auto.Remove(fourWheels);
                                                  }
                      

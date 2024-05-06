@@ -14,13 +14,13 @@ namespace DesafioFundamentos.src.model
     {
 
         public Vehicles(){}
-        public Vehicles(string VehicleModel, string Vehicleplate,  string VehicleColor, int VehicleBegin){
+        public Vehicles(string VehicleModel, string Vehicleplate,  string VehicleColor, int VehicleBegin, int vMinutos){
             
           this.VehicleModel = VehicleModel;
           this.Vehicleplate = Vehicleplate;
           this.VehicleColor = VehicleColor;
           this.VehicleBegin = VehicleBegin;
-          
+          this.vMinutos = vMinutos;
         }
 
      
@@ -32,6 +32,8 @@ namespace DesafioFundamentos.src.model
     
 
       public int VehicleBegin { get; set;}
+      public int vMinutos { get; set;}
+
       public List<Vehicles> auto = new();  
 
       public virtual void VehicleAdd(){}

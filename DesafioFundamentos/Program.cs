@@ -38,7 +38,6 @@ while (exibirMenu)
             break;
         case "3":
             auto.VehicleList();
-            
             break;
         case "4":
             exibirMenu = false;
