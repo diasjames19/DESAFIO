@@ -14,23 +14,42 @@ namespace DesafioFundamentos.src.model
     {
 
         public Vehicles(){}
+<<<<<<< HEAD
         public Vehicles(string VehicleModel, string Vehicleplate,  string VehicleColor, DateTime VehicleBegin){
+=======
+        public Vehicles(string VehicleModel, string Vehicleplate,  string VehicleColor, int VehicleBegin, int vMinutos){
+>>>>>>> dev-estacionamento
             
           this.VehicleModel = VehicleModel;
           this.Vehicleplate = Vehicleplate;
           this.VehicleColor = VehicleColor;
           this.VehicleBegin = VehicleBegin;
+<<<<<<< HEAD
 
         }
 
      // private decimal StartingPrice = 0;
       // private decimal TimePrice = 0;
+=======
+          this.vMinutos = vMinutos;
+        }
+
+     
+>>>>>>> dev-estacionamento
       
       public string? VehicleModel{get; set;} 
       public string? Vehicleplate{get; set;}
       public string? VehicleColor{get; set;}
 
+<<<<<<< HEAD
         public DateTime VehicleBegin { get; set;}
+=======
+    
+
+      public int VehicleBegin { get; set;}
+      public int vMinutos { get; set;}
+
+>>>>>>> dev-estacionamento
       public List<Vehicles> auto = new();  
 
       public virtual void VehicleAdd(){}
