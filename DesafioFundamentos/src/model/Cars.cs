@@ -8,9 +8,13 @@ namespace DesafioFundamentos.src.model
 {
     public class Cars:Vehicles 
     {
+<<<<<<< HEAD
         private decimal precoInicial = 0;
         private decimal precoPorHora = 0;
         public Cars(){}
+=======
+
+>>>>>>> dev-estacionamento
         public Cars(){}
         
         public Cars
@@ -19,9 +23,15 @@ namespace DesafioFundamentos.src.model
             string VehicleModel,
             string Vehicleplate,  
             string VehicleColor,
+<<<<<<< HEAD
             DateTime VehicleBegin,
             int VehicleBegin,
             int vMinutos           
+=======
+            int VehicleBegin,
+            int vMinutos
+            
+>>>>>>> dev-estacionamento
         ):
          base(
                 VehicleModel,
@@ -32,8 +42,14 @@ namespace DesafioFundamentos.src.model
          ){
                 
         }
+<<<<<<< HEAD
 
         public override void VehicleAdd(){
+        public  override void VehicleAdd(){
+>>>>>>> dev-estacionamento
+=======
+       
+        
         public  override void VehicleAdd(){
 >>>>>>> dev-estacionamento
              Cars fourWheels = new Cars();
@@ -46,10 +62,13 @@ namespace DesafioFundamentos.src.model
               fourWheels.Vehicleplate = Console.ReadLine();
               Console.WriteLine("cor do Veiculo: ");
               fourWheels.VehicleColor = Console.ReadLine();
+<<<<<<< HEAD
               fourWheels.VehicleBegin = dateTime;
               Console.Clear();
               auto.Add(fourWheels);
               Console.WriteLine($"Data-{fourWheels.VehicleBegin}");
+=======
+>>>>>>> dev-estacionamento
               fourWheels.VehicleBegin = dateTime.Hour;
               fourWheels.vMinutos = dateTime.Minute;
               Console.Clear();
@@ -59,6 +78,7 @@ namespace DesafioFundamentos.src.model
               Console.Write("Cadastrado com sucesso!\n");    
        }
        public override void VehicleRemove(){
+<<<<<<< HEAD
                 Console.WriteLine("Digite a placa do veículo para remover:");
                 string searchPlate = Console.ReadLine();
                  foreach(Cars fourWheels in auto){
@@ -73,6 +93,8 @@ namespace DesafioFundamentos.src.model
                 }                  
               }
 
+=======
+>>>>>>> dev-estacionamento
                int vEnd,tempoUso,qtdHour;
                int achou = 0;
                string searchPlate,vP;
@@ -208,11 +230,16 @@ namespace DesafioFundamentos.src.model
                     }
                 }                          
             }                  
+<<<<<<< HEAD
+=======
+              
+>>>>>>> dev-estacionamento
             public void VehicleList()
             {
                 if(auto.Count > 0){
                       foreach(Cars item in auto)
                       {Console.WriteLine("Carro:"+item.VehicleModel+"\nPlaca:"+item.Vehicleplate+"|Cor:"+item.VehicleColor); }
+<<<<<<< HEAD
 
                 }else
                 {
@@ -225,6 +252,9 @@ namespace DesafioFundamentos.src.model
         }    
     }    
                 
+=======
+                }
+>>>>>>> dev-estacionamento
                 else
                 {
                   Console.WriteLine("Não há veículos estacionados.");  
@@ -234,4 +264,7 @@ namespace DesafioFundamentos.src.model
         }    
 }
        
+<<<<<<< HEAD
+>>>>>>> dev-estacionamento
+=======
 >>>>>>> dev-estacionamento

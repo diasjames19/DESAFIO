@@ -15,7 +15,11 @@ namespace DesafioFundamentos.src.model
 
         public Vehicles(){}
 <<<<<<< HEAD
+<<<<<<< HEAD
         public Vehicles(string VehicleModel, string Vehicleplate,  string VehicleColor, DateTime VehicleBegin){
+=======
+        public Vehicles(string VehicleModel, string Vehicleplate,  string VehicleColor, int VehicleBegin, int vMinutos){
+>>>>>>> dev-estacionamento
 =======
         public Vehicles(string VehicleModel, string Vehicleplate,  string VehicleColor, int VehicleBegin, int vMinutos){
 >>>>>>> dev-estacionamento
@@ -25,16 +29,20 @@ namespace DesafioFundamentos.src.model
           this.VehicleColor = VehicleColor;
           this.VehicleBegin = VehicleBegin;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         }
 
-     // private decimal StartingPrice = 0;
-      // private decimal TimePrice = 0;
 =======
+=======
+>>>>>>> dev-estacionamento
           this.vMinutos = vMinutos;
         }
 
      
+<<<<<<< HEAD
+>>>>>>> dev-estacionamento
+=======
 >>>>>>> dev-estacionamento
       
       public string? VehicleModel{get; set;} 
@@ -42,13 +50,19 @@ namespace DesafioFundamentos.src.model
       public string? VehicleColor{get; set;}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public DateTime VehicleBegin { get; set;}
 =======
+=======
+>>>>>>> dev-estacionamento
     
 
       public int VehicleBegin { get; set;}
       public int vMinutos { get; set;}
 
+<<<<<<< HEAD
+>>>>>>> dev-estacionamento
+=======
 >>>>>>> dev-estacionamento
       public List<Vehicles> auto = new();  
 
