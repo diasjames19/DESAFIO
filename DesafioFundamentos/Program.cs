@@ -8,7 +8,7 @@ internal class Program
     {        
         Cars auto = new Cars();
        
-         DateTime hoje =  DateTime.Now;
+         
 
 
 
@@ -20,7 +20,7 @@ while (exibirMenu)
     
 
     
-    Console.WriteLine($"Data:{hoje}");
+    
     Console.WriteLine("Digite a sua opção:");
     Console.WriteLine("1 - Cadastrar veículo");
     Console.WriteLine("2 - Remover veículo");
@@ -34,9 +34,11 @@ while (exibirMenu)
             break;
         case "2":
             auto.VehicleRemove();
+            exibirMenu = true;
             break;
         case "3":
             auto.VehicleList();
+            
             break;
         case "4":
             exibirMenu = false;
