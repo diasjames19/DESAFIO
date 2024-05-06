@@ -9,8 +9,7 @@ namespace DesafioFundamentos.src.model
     public class Cars:Vehicles 
     {
 <<<<<<< HEAD
-        private decimal precoInicial = 0;
-        private decimal precoPorHora = 0;
+
         public Cars(){}
 =======
 
